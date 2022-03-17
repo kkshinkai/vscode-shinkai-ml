@@ -7,15 +7,32 @@
 		},
 		{
 			"include": "#strings"
-		}
+		},
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#boolean"
+        },
+        {
+            "include": "#integer"
+        }
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.standardml",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(abstype|and|andalso|as|case|datatype|do|else|end|exception|fn|fun|handle|if|in|infix|infixr|let|local|nonfix|of|op|open|orelse|raise|rec|then|type|val|with|withtype|while)\\b"
 			}]
 		},
+        "boolean": {
+            "name": "constant.language.boolean.standardml",
+            "match": "\\b(true|false)\\b"
+        },
+        "integer": {
+            "name": "constant.numeric.integer.standardml",
+            "match": "\\b([0-9]+)\\b"
+        },
 		"strings": {
 			"name": "string.quoted.double.standardml",
 			"begin": "\"",
@@ -26,7 +43,17 @@
 					"match": "\\\\."
 				}
 			]
-		}
+        },
+        "comments": {
+            "name": "comment.block.standardml",
+            "begin": "\\(\\*",
+            "end": "\\*\\)",
+            "patterns": [
+                {
+                    "include": "#comments"
+                }
+            ]
+        }
 	},
 	"scopeName": "source.sml"
 }
