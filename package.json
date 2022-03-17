@@ -1,0 +1,25 @@
+{
+    "name": "shinkaiml",
+    "displayName": "Shinkai ML for VSCode",
+    "description": "VS Code extension for Shinkai ML.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.65.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "standardml",
+            "aliases": ["Standard ML", "standardml"],
+            "extensions": [".sml",".sig",".fun"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "standardml",
+            "scopeName": "source.sml",
+            "path": "./syntaxes/standardml.tmLanguage.json"
+        }]
+    }
+}
